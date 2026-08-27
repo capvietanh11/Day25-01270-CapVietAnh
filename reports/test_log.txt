@@ -50,4 +50,4 @@ tests/test_todo_requirements.py::test_half_open_failure_gives_probe_failure_reas
 tests/test_todo_requirements.py::test_gateway_routes_through_providers XPASS [ 97%]
 tests/test_todo_requirements.py::test_metrics_csv_export XPASS (Stud...) [100%]
 
-======================== 35 passed, 7 xpassed in 4.22s ========================
+======================== 35 passed, 7 xpassed in 3.90s ========================

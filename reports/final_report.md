@@ -48,11 +48,11 @@ memory cache backend):
 
 | SLI | SLO target | Actual value | Met? |
 |---|---|---:|---|
-| Availability | >= 99% | 99.33% | ✅ Yes |
-| Latency P95 | < 2500 ms | 315.47 ms | ✅ Yes |
-| Fallback success rate | >= 95% | 96.72% | ✅ Yes |
-| Cache hit rate | >= 10% | 64.0% | ✅ Yes |
-| Recovery time | < 5000 ms | 2281.5 ms | ✅ Yes |
+| Availability | >= 99% | 99.67% | ✅ Yes |
+| Latency P95 | < 2500 ms | 317.30 ms | ✅ Yes |
+| Fallback success rate | >= 95% | 98.59% | ✅ Yes |
+| Cache hit rate | >= 10% | 59.0% | ✅ Yes |
+| Recovery time | < 5000 ms | 2249.9 ms | ✅ Yes |
 
 All five SLOs are met in this run. Note that `run_scenario()` samples a
 random query and provider jitter per request (no fixed RNG seed), so
@@ -66,20 +66,20 @@ scenarios deliberately fail the primary provider 50-100% of the time. See
 ## 4. Metrics
 
 From `reports/metrics.json` (memory cache backend, 300 requests,
-reproduced via `make run-chaos`):
+reproduced via `make run-chaos` in a clean `.venv`):
 
 | Metric | Value |
 |---|---:|
-| availability | 0.9933 |
-| error_rate | 0.0067 |
-| latency_p50_ms | 265.06 |
-| latency_p95_ms | 315.47 |
-| latency_p99_ms | 319.32 |
-| fallback_success_rate | 0.9672 |
-| cache_hit_rate | 0.64 |
-| estimated_cost_saved | 0.192 |
+| availability | 0.9967 |
+| error_rate | 0.0033 |
+| latency_p50_ms | 271.24 |
+| latency_p95_ms | 317.30 |
+| latency_p99_ms | 320.49 |
+| fallback_success_rate | 0.9859 |
+| cache_hit_rate | 0.59 |
+| estimated_cost_saved | 0.177 |
 | circuit_open_count | 7 |
-| recovery_time_ms | 2281.46 |
+| recovery_time_ms | 2249.88 |
 
 ## 5. Cache comparison
 
