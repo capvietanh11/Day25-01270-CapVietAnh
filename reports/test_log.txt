@@ -1,0 +1,53 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- D:\VIN AI THUC CHIEN\Labs\Day25\Day25-01270-CapVietAnh\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\VIN AI THUC CHIEN\Labs\Day25\Day25-01270-CapVietAnh
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0
+collecting ... collected 42 items
+
+tests/test_cache.py::test_exact_match_returns_hit PASSED                 [  2%]
+tests/test_cache.py::test_similar_query_returns_hit PASSED               [  4%]
+tests/test_cache.py::test_dissimilar_query_returns_miss PASSED           [  7%]
+tests/test_cache.py::test_ttl_expiry PASSED                              [  9%]
+tests/test_cache.py::test_privacy_query_bypasses_cache PASSED            [ 11%]
+tests/test_cache.py::test_privacy_query_not_stored PASSED                [ 14%]
+tests/test_cache.py::test_false_hit_detection_different_years PASSED     [ 16%]
+tests/test_cache.py::test_same_year_not_flagged_as_false_hit PASSED      [ 19%]
+tests/test_cache.py::test_ngram_similarity_scores PASSED                 [ 21%]
+tests/test_circuit_breaker.py::test_starts_closed PASSED                 [ 23%]
+tests/test_circuit_breaker.py::test_opens_after_failure_threshold PASSED [ 26%]
+tests/test_circuit_breaker.py::test_does_not_open_below_threshold PASSED [ 28%]
+tests/test_circuit_breaker.py::test_success_resets_failure_count PASSED  [ 30%]
+tests/test_circuit_breaker.py::test_open_transitions_to_half_open_after_timeout PASSED [ 33%]
+tests/test_circuit_breaker.py::test_half_open_closes_on_success PASSED   [ 35%]
+tests/test_circuit_breaker.py::test_half_open_reopens_on_failure PASSED  [ 38%]
+tests/test_circuit_breaker.py::test_call_raises_circuit_open_error PASSED [ 40%]
+tests/test_circuit_breaker.py::test_call_records_success_and_failure PASSED [ 42%]
+tests/test_circuit_breaker.py::test_transition_log_records_state_changes PASSED [ 45%]
+tests/test_circuit_breaker.py::test_no_duplicate_transitions PASSED      [ 47%]
+tests/test_circuit_breaker.py::test_success_threshold_greater_than_one PASSED [ 50%]
+tests/test_config.py::test_default_config_loads PASSED                   [ 52%]
+tests/test_config.py::test_scenarios_loaded PASSED                       [ 54%]
+tests/test_gateway_contract.py::test_gateway_returns_response_with_route_reason PASSED [ 57%]
+tests/test_gateway_contract.py::test_gateway_falls_back_when_primary_fails PASSED [ 59%]
+tests/test_gateway_contract.py::test_gateway_returns_static_fallback_when_all_fail PASSED [ 61%]
+tests/test_gateway_contract.py::test_gateway_uses_cache PASSED           [ 64%]
+tests/test_metrics.py::test_percentile PASSED                            [ 66%]
+tests/test_metrics.py::test_report_dict_contains_required_metrics PASSED [ 69%]
+tests/test_redis_cache.py::test_redis_connection PASSED                  [ 71%]
+tests/test_redis_cache.py::test_set_and_exact_get PASSED                 [ 73%]
+tests/test_redis_cache.py::test_ttl_expiry PASSED                        [ 76%]
+tests/test_redis_cache.py::test_shared_state_across_instances PASSED     [ 78%]
+tests/test_redis_cache.py::test_privacy_query_not_cached PASSED          [ 80%]
+tests/test_redis_cache.py::test_false_hit_different_years PASSED         [ 83%]
+tests/test_todo_requirements.py::test_similarity_uses_ngrams_not_jaccard XPASS [ 85%]
+tests/test_todo_requirements.py::test_semantic_cache_should_not_false_hit_different_intent XPASS [ 88%]
+tests/test_todo_requirements.py::test_privacy_queries_never_cached XPASS [ 90%]
+tests/test_todo_requirements.py::test_circuit_breaker_denies_when_open XPASS [ 92%]
+tests/test_todo_requirements.py::test_half_open_failure_gives_probe_failure_reason XPASS [ 95%]
+tests/test_todo_requirements.py::test_gateway_routes_through_providers XPASS [ 97%]
+tests/test_todo_requirements.py::test_metrics_csv_export XPASS (Stud...) [100%]
+
+======================== 35 passed, 7 xpassed in 4.22s ========================
